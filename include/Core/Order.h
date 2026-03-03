@@ -16,4 +16,7 @@ class Order{
         // getter methods for private variables
         long double getPrice() const;
         long int getQuantity() const;
+        long int getOrderID() const;
+        Side getSide() const;
+        void printOrder() const;
 };
