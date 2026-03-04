@@ -15,8 +15,11 @@ class Order{
         Order(long int orderID, int instrumentID, Side side, long double price, long int quantity);
         // getter methods for private variables
         long double getPrice() const;
+        long int getInstrumentID() const;
         long int getQuantity() const;
         long int getOrderID() const;
         Side getSide() const;
+        std::chrono::system_clock::time_point getOrderTime() const;
         void printOrder() const;
+        void fill(long int quantity);
 };

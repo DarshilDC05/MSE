@@ -21,6 +21,10 @@ long int Order::getQuantity() const{
     return m_quantity;
 }
 
+long int Order::getInstrumentID() const{
+    return m_instrumentID;
+}
+
 long int Order::getOrderID() const{
     return m_orderID;
 }
@@ -29,6 +33,15 @@ Side Order::getSide() const{
     return m_side;
 }
 
+std::chrono::system_clock::time_point Order::getOrderTime() const{
+    return m_timestamp;
+}
+
 void Order::printOrder() const{
-    std::cout << "OrderID = " << getOrderID() << std::endl;
+    std::cout << "OrderID=" << getOrderID() << "\t| InstrumentID=" << getInstrumentID() << " \t| Price=" << getPrice()
+    << "\t| Quantity=" << getQuantity() << "\t| Time=" << getOrderTime() << std::endl;
+}
+
+void Order::fill(long int quantity){
+    m_quantity -= quantity;
 }
